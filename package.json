@@ -1,0 +1,13 @@
+{
+  "name": "shaikh-hunain-portfolio",
+  "version": "2.6.0",
+  "description": "Shaikh Hunain — AI Engineer & Full Stack Developer Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": ["portfolio", "ai-engineer", "full-stack", "bento-grid"],
+  "author": "Shaikh Hunain <shaikhhunainofficial@gmail.com>",
+  "license": "MIT"
+}

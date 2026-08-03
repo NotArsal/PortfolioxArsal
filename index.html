@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shaikh Hunain — AI & Systems Engineer</title>
+<meta name="description" content="Shaikh Hunain — AI Engineer & Full Stack Developer at VIT Pune. Building high-performance ML pipelines, autonomous robotics, and scalable web architectures." />
+<meta name="theme-color" content="#000000" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #000000;
+    --card-bg: #0A0A0A;
+    --card-hover: #121212;
+    --border: #222222;
+    --border-hover: #444444;
+    --text: #FFFFFF;
+    --muted: #A1A1AA;
+    --dim: #52525B;
+    --accent: #FFFFFF;
+    --vercel-blue: #0070F3;
+    --glow-cyan: rgba(0, 240, 255, 0.15);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---- ACETERNITY / VERCEL SUB-PIXEL GRID & AMBIENT SPOTLIGHT ---- */
+  .grid-bg {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at 50% 30%, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 30%, black 40%, transparent 80%);
+  }
+
+  /* CURSOR SPOTLIGHT GLOW */
+  #spotlight-glow {
+    position: fixed; width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.07) 0%, transparent 70%);
+    pointer-events: none; transform: translate(-50%, -50%); z-index: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  /* ---- HEADER ---- */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1040px; margin: 0 auto; padding: 0 24px;
+    height: 64px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Geist Mono', monospace; font-weight: 700; font-size: 15px;
+    letter-spacing: -0.5px; color: var(--text); display: flex; align-items: center; gap: 8px; cursor: pointer;
+  }
+  .nav-logo span { color: var(--muted); font-weight: 400; }
+  .nav-links { display: flex; align-items: center; gap: 20px; font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--muted); }
+  .nav-link { cursor: pointer; transition: color 0.2s; }
+  .nav-link:hover { color: var(--text); }
+  .nav-btn {
+    padding: 6px 14px; border-radius: 6px; background: var(--text); color: var(--bg);
+    font-weight: 600; font-family: 'Geist Mono', monospace; font-size: 12.5px; border: none; cursor: pointer; transition: opacity 0.2s;
+  }
+  .nav-btn:hover { opacity: 0.88; }
+
+  /* ---- HERO SECTION ---- */
+  #hero { padding: 140px 0 50px; }
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 12px; border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border);
+    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 24px;
+  }
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: #00FF9D; box-shadow: 0 0 8px #00FF9D; }
+  .hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(40px, 7vw, 72px); font-weight: 800;
+    line-height: 1.05; letter-spacing: -2px; margin-bottom: 24px;
+  }
+  .hero-title span { color: var(--muted); }
+  .hero-bio { font-size: 18px; color: var(--muted); line-height: 1.7; max-width: 680px; margin-bottom: 32px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+
+  .btn-main {
+    padding: 12px 24px; border-radius: 8px; background: var(--text); color: var(--bg);
+    font-weight: 600; font-family: 'Geist Mono', monospace; font-size: 13.5px;
+    display: inline-flex; align-items: center; gap: 8px; transition: opacity 0.2s; border: none; cursor: pointer;
+  }
+  .btn-main:hover { opacity: 0.9; }
+  .btn-ghost {
+    padding: 12px 24px; border-radius: 8px; background: var(--card-bg); border: 1px solid var(--border);
+    color: var(--text); font-weight: 500; font-family: 'Geist Mono', monospace; font-size: 13.5px;
+    display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--border-hover); background: var(--card-hover); }
+
+  /* ---- MAGIC UI MARQUEE SCROLL LOOP ---- */
+  .marquee-container {
+    overflow: hidden; white-space: nowrap; margin-bottom: 60px;
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+  .marquee-track {
+    display: inline-flex; gap: 12px; animation: marqueeScroll 25s linear infinite;
+  }
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-item {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-radius: 8px; background: var(--card-bg); border: 1px solid var(--border);
+    font-family: 'Geist Mono', monospace; font-size: 12.5px; color: var(--muted);
+  }
+
+  /* ---- 21ST.DEV & GETDESIGN.MD INSPIRED LIVE SEARCH ENGINE BAR ---- */
+  .search-container {
+    background: #0D0D0D;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 64px;
+    transition: all 0.25s ease;
+    position: relative;
+  }
+  .search-container:focus-within {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
+  }
+  .search-input-wrapper {
+    display: flex; align-items: center; gap: 12px; padding: 10px 16px;
+  }
+  .search-icon { color: var(--muted); font-size: 16px; }
+  .search-input {
+    background: none; border: none; outline: none; color: var(--text);
+    font-family: 'Geist Mono', monospace; font-size: 15px; width: 100%;
+  }
+  .search-shortcut {
+    font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--dim);
+    background: rgba(255,255,255,0.06); padding: 3px 7px; border-radius: 4px; border: 1px solid var(--border);
+  }
+
+  .search-tabs {
+    display: flex; gap: 6px; padding: 8px 12px 4px; border-top: 1px solid rgba(255,255,255,0.05); overflow-x: auto;
+  }
+  .search-tab {
+    font-family: 'Geist Mono', monospace; font-size: 11.5px; font-weight: 500;
+    color: var(--muted); background: none; border: 1px solid transparent; padding: 5px 12px;
+    border-radius: 6px; cursor: pointer; transition: all 0.15s; whitespace-nowrap;
+  }
+  .search-tab:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+  .search-tab.active { color: var(--text); background: var(--card-hover); border-color: var(--border-hover); font-weight: 600; }
+
+  .search-meta {
+    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--dim);
+    margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;
+  }
+
+  /* ---- SECTION HEADER ---- */
+  .sec-tag { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--dim); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: block; }
+  .sec-title { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 32px; }
+
+  /* ---- ACETERNITY 3D TILT CARDS ---- */
+  .cases-list { display: flex; flex-direction: column; gap: 24px; margin-bottom: 90px; }
+  .mono-card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
+    padding: 32px; transition: transform 0.2s ease, border-color 0.2s, background 0.2s;
+    transform-style: preserve-3d; perspective: 1000px;
+  }
+  .mono-card:hover { border-color: var(--border-hover); background: var(--card-hover); transform: translateY(-2px); }
+  .mono-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; gap: 12px; }
+  .mono-title { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .mono-sub { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .mono-tag { font-family: 'Geist Mono', monospace; font-size: 11px; padding: 3px 10px; border-radius: 4px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--muted); }
+  .mono-desc { color: var(--muted); font-size: 14.5px; line-height: 1.7; margin-bottom: 24px; }
+
+  /* ---- GETDESIGN.MD SPEC & CODE DRAWER ---- */
+  .drawer-toggle {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--dim);
+    background: none; border: none; cursor: pointer; padding: 0; transition: color 0.2s; margin-bottom: 18px;
+  }
+  .drawer-toggle:hover { color: var(--text); }
+  .code-drawer {
+    display: none; background: #050505; border: 1px solid var(--border); border-radius: 8px;
+    padding: 18px; font-family: 'Geist Mono', monospace; font-size: 12.5px; color: #D4D4D8;
+    line-height: 1.6; margin-bottom: 20px; overflow-x: auto; position: relative;
+  }
+  .code-drawer.open { display: block; }
+  .code-key { color: #60A5FA; }
+  .code-str { color: #34D399; }
+  .code-num { color: #F59E0B; }
+
+  /* 21ST.DEV CODE COPY BUTTON */
+  .copy-btn {
+    position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.08);
+    border: 1px solid var(--border); border-radius: 4px; color: var(--muted);
+    font-family: 'Geist Mono', monospace; font-size: 11px; padding: 4px 8px; cursor: pointer; transition: all 0.2s;
+  }
+  .copy-btn:hover { color: var(--text); background: rgba(255,255,255,0.15); }
+
+  .mono-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+  .tech-pill { font-family: 'Geist Mono', monospace; font-size: 11px; padding: 3px 8px; border-radius: 4px; background: #000; border: 1px solid var(--border); color: var(--muted); }
+  .mono-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .link-btn {
+    font-family: 'Geist Mono', monospace; font-size: 12.5px; font-weight: 500;
+    color: var(--text); display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;
+  }
+  .link-btn:hover { color: var(--vercel-blue); }
+
+  /* ---- OPEN SOURCE GRID ---- */
+  .os-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 90px; }
+  .os-tile {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px;
+    display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.2s;
+  }
+  .os-tile:hover { border-color: var(--border-hover); }
+  .os-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; margin-bottom: 8px; }
+  .os-desc { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 16px; flex: 1; }
+
+  /* ---- TECHNICAL MATRIX ---- */
+  .matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 90px; }
+  .matrix-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+  .matrix-title { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--dim); text-transform: uppercase; margin-bottom: 12px; }
+  .matrix-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  /* ---- GETDESIGN.MD DESIGN SPECIFICATION TOKENS DRAWER ---- */
+  .design-spec-box {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-bottom: 90px;
+  }
+
+  /* ---- RESEARCH CARD ---- */
+  .research-box {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 90px;
+  }
+
+  /* ---- CONTACT ---- */
+  #contact { padding-bottom: 120px; border-top: 1px solid var(--border); padding-top: 80px; }
+  .contact-inner { text-align: center; max-width: 600px; margin: 0 auto; }
+
+  /* ---- FOOTER ---- */
+  footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; font-family: 'Geist Mono', monospace; font-size: 12.5px; color: var(--dim); }
+
+  /* TOAST NOTIFICATION */
+  #toast {
+    position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+    background: #111111; border: 1px solid var(--border-hover); color: var(--text);
+    font-family: 'Geist Mono', monospace; font-size: 12.5px; padding: 10px 18px; border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8); display: none; align-items: center; gap: 8px;
+  }
+  #toast.show { display: flex; }
+
+  /* ---- COMMAND PALETTE (CMD+K) ---- */
+  #cmd-modal {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(16px);
+    align-items: flex-start; justify-content: center; padding-top: 120px;
+  }
+  #cmd-modal.open { display: flex; }
+  .cmd-box {
+    background: #0A0A0A; border: 1px solid var(--border-hover); border-radius: 12px;
+    max-width: 560px; width: 100%; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+  }
+  .cmd-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .cmd-input { background: none; border: none; outline: none; color: var(--text); font-family: 'Geist Mono', monospace; font-size: 14px; width: 100%; }
+  .cmd-items { max-height: 300px; overflow-y: auto; padding: 8px; }
+  .cmd-item {
+    padding: 10px 14px; border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 13px;
+    color: var(--muted); cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  }
+  .cmd-item:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-title { font-size: 38px; }
+    .mono-card { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ACETERNITY CURSOR SPOTLIGHT -->
+<div id="spotlight-glow"></div>
+<div class="grid-bg"></div>
+
+<!-- TOAST ALERT -->
+<div id="toast"><span>✓</span> <span id="toast-msg">COPIED TO CLIPBOARD</span></div>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="scrollToSec('hero')">HUNAIN<span>/AI</span></div>
+    <div class="nav-links">
+      <span class="nav-link" onclick="scrollToSec('search')">Search</span>
+      <span class="nav-link" onclick="scrollToSec('cases')">Work</span>
+      <span class="nav-link" onclick="scrollToSec('opensource')">Open Source</span>
+      <span class="nav-link" onclick="scrollToSec('matrix')">Stack</span>
+      <span class="nav-link" onclick="scrollToSec('designspec')">DESIGN.md</span>
+      <span class="nav-link" onclick="scrollToSec('research')">Research</span>
+      <span class="nav-link" onclick="scrollToSec('contact')">Contact</span>
+      <button class="nav-btn" onclick="openCmdModal()">⌘K</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <div class="status-pill">
+      <span class="status-dot"></span>
+      <span>AVAILABLE FOR ROLES // VIT PUNE CS &amp; AI</span>
+    </div>
+    <h1 class="hero-title">
+      Shaikh Hunain<br>
+      <span>AI &amp; Systems Engineer.</span>
+    </h1>
+    <p class="hero-bio">
+      Building production-grade machine learning pipelines, explainable ML models, and high-throughput async web architectures.
+    </p>
+    <div class="hero-actions">
+      <a href="#cases" class="btn-main" onclick="scrollToSec('cases');return false;">
+        View Work ↵
+      </a>
+      <a href="https://github.com/NotArsal" target="_blank" class="btn-ghost">
+        GitHub Profile ↗
+      </a>
+      <a href="https://www.linkedin.com/in/shaikh-hunain-2a3ab1329/" target="_blank" class="btn-ghost">
+        LinkedIn ↗
+      </a>
+    </div>
+
+    <!-- MAGIC UI MARQUEE TICKER LOOP -->
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <div class="marquee-item"><span>⚡</span> Python &amp; PyTorch</div>
+        <div class="marquee-item"><span>🤖</span> ROS &amp; Autonomous Nav</div>
+        <div class="marquee-item"><span>🌐</span> React.js &amp; TypeScript</div>
+        <div class="marquee-item"><span>🧠</span> XGBoost 95.8% Acc</div>
+        <div class="marquee-item"><span>⚡</span> FastAPI &amp; Redis</div>
+        <div class="marquee-item"><span>🧩</span> Chrome Extension MV3</div>
+        <div class="marquee-item"><span>👁️</span> MediaPipe Vision</div>
+        <div class="marquee-item"><span>📊</span> SHAP Explainability</div>
+        <!-- Duplicate for infinite smooth loop -->
+        <div class="marquee-item"><span>⚡</span> Python &amp; PyTorch</div>
+        <div class="marquee-item"><span>🤖</span> ROS &amp; Autonomous Nav</div>
+        <div class="marquee-item"><span>🌐</span> React.js &amp; TypeScript</div>
+        <div class="marquee-item"><span>🧠</span> XGBoost 95.8% Acc</div>
+        <div class="marquee-item"><span>⚡</span> FastAPI &amp; Redis</div>
+        <div class="marquee-item"><span>🧩</span> Chrome Extension MV3</div>
+      </div>
+    </div>
+
+    <!-- 21ST.DEV & GETDESIGN.MD INSPIRED LIVE SEARCH ENGINE BAR -->
+    <div id="search" class="search-container">
+      <div class="search-input-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="live-search-input" class="search-input" placeholder="Search projects, technologies, repos, paper (e.g. XGBoost, Robotics, Chrome, MERN)..." oninput="handleSearch()" />
+        <span class="search-shortcut">Press / to focus</span>
+      </div>
+      <div class="search-tabs">
+        <button class="search-tab active" onclick="setCategoryFilter('ALL', this)">ALL (11)</button>
+        <button class="search-tab" onclick="setCategoryFilter('PROJECTS', this)">PROJECTS (6)</button>
+        <button class="search-tab" onclick="setCategoryFilter('OPEN SOURCE', this)">OPEN SOURCE (4)</button>
+        <button class="search-tab" onclick="setCategoryFilter('TECH STACK', this)">TECH STACK (16)</button>
+        <button class="search-tab" onclick="setCategoryFilter('RESEARCH', this)">RESEARCH (1)</button>
+      </div>
+    </div>
+    <div class="search-meta">
+      <span id="search-count-label">SHOWING ALL IMPLEMENTATIONS &amp; REPOSITORIES</span>
+      <span style="cursor:pointer" onclick="resetSearch()">[ Reset Filter ]</span>
+    </div>
+  </section>
+
+  <!-- ===== CASE STUDIES (RESUME & GITHUB REPOS) ===== -->
+  <section id="cases">
+    <span class="sec-tag">01 // FEATURED IMPLEMENTATIONS</span>
+    <h2 class="sec-title">Production Systems &amp; Repositories</h2>
+
+    <div class="cases-list" id="projects-container">
+
+      <!-- 1. SARAS -->
+      <article class="mono-card search-item" data-category="PROJECTS" data-keywords="saras robotics hardware raspberry pi vision speech recognition python autonomous navigation ros">
+        <div class="mono-top">
+          <div>
+            <h3 class="mono-title">SARAS — Smart Autonomous Robotic AI System</h3>
+            <div class="mono-sub">HARDWARE ROBOTICS // MULTIMODAL PERCEPTION // ROS LOOP</div>
+          </div>
+          <span class="mono-tag">Robotics &amp; AI</span>
+        </div>
+        <p class="mono-desc">
+          AI-powered autonomous robot combining Raspberry Pi hardware control with real-time speech recognition, computer vision, conversational AI, object detection, and autonomous navigation.
+        </p>
+        <button class="drawer-toggle" onclick="toggleDrawer('drawer-saras')">
+          <span>[+] View System Architecture JSON</span>
+        </button>
+        <div class="code-drawer" id="drawer-saras">
+          <button class="copy-btn" onclick="copyCode('drawer-saras-code')">Copy JSON</button>
+          <pre id="drawer-saras-code"><code>{
+  <span class="code-key">"hardware"</span>: <span class="code-str">"Raspberry Pi 4 Model B"</span>,
+  <span class="code-key">"perception"</span>: [<span class="code-str">"Real-time Speech Recog"</span>, <span class="code-str">"MediaPipe Vision"</span>],
+  <span class="code-key">"loop_latency"</span>: <span class="code-num">85</span> <span class="code-str">"ms"</span>,
+  <span class="code-key">"navigation"</span>: <span class="code-str">"Autonomous Exploration & Obstacle Avoidance"</span>
+}</code></pre>
+        </div>
+        <div class="mono-tech">
+          <span class="tech-pill">Raspberry Pi</span><span class="tech-pill">Python</span><span class="tech-pill">Computer Vision</span><span class="tech-pill">Speech Recog</span><span class="tech-pill">Autonomous Nav</span>
+        </div>
+        <div class="mono-links">
+          <a href="https://github.com/NotArsal/SARAS" target="_blank" class="link-btn">github.com/NotArsal/SARAS ↗</a>
+        </div>
+      </article>
+
+      <!-- 2. FormBhar -->
+      <article class="mono-card search-item" data-category="PROJECTS" data-keywords="formbhar google forms chrome extension mv3 supabase llm gpt-4o gemini claude automatic auto-fill">
+        <div class="mono-top">
+          <div>
+            <h3 class="mono-title">FormBhar — AI Google Forms Auto-Filler</h3>
+            <div class="mono-sub">CHROME EXTENSION (MV3) // MULTI-LLM FALLBACK // SUPABASE</div>
+          </div>
+          <span class="mono-tag">Chrome MV3</span>
+        </div>
+        <p class="mono-desc">
+          Production Chrome Extension with Node.js/Express backend and Supabase PostgreSQL. Integrated multi-model AI engine (GPT-4o-mini, Gemini 1.5 Pro, Claude 3) with automatic provider fallback and Service Worker API key isolation.
+        </p>
+        <button class="drawer-toggle" onclick="toggleDrawer('drawer-formbhar')">
+          <span>[+] View Fallback Spec JSON</span>
+        </button>
+        <div class="code-drawer" id="drawer-formbhar">
+          <button class="copy-btn" onclick="copyCode('drawer-formbhar-code')">Copy JSON</button>
+          <pre id="drawer-formbhar-code"><code>{
+  <span class="code-key">"manifest"</span>: <span class="code-str">"V3 Service Worker"</span>,
+  <span class="code-key">"providers"</span>: [<span class="code-str">"OpenAI GPT-4o-mini"</span>, <span class="code-str">"Gemini 1.5 Pro"</span>, <span class="code-str">"Claude 3"</span>],
+  <span class="code-key">"fallback_strategy"</span>: <span class="code-str">"Automatic Status Code Intercept"</span>,
+  <span class="code-key">"privacy"</span>: <span class="code-str">"Isolated Extension Context"</span>
+}</code></pre>
+        </div>
+        <div class="mono-tech">
+          <span class="tech-pill">Chrome Ext MV3</span><span class="tech-pill">Node.js</span><span class="tech-pill">Supabase</span><span class="tech-pill">GPT-4o</span><span class="tech-pill">Gemini 1.5</span><span class="tech-pill">Claude 3</span>
+        </div>
+        <div class="mono-links">
+          <a href="https://github.com/NotArsal/FormBhar" target="_blank" class="link-btn">github.com/NotArsal/FormBhar ↗</a>
+          <a href="https://github.com/NotArsal/FormBhar-Backend" target="_blank" class="link-btn">Backend Repo ↗</a>
+        </div>
+      </article>
+
+      <!-- 3. Tomato -->
+      <article class="mono-card search-item" data-category="PROJECTS" data-keywords="tomato mern food delivery react node.js mongodb socket.io leaflet live vercel">
+        <div class="mono-top">
+          <div>
+            <h3 class="mono-title">Tomato — Full Stack Food Delivery Platform</h3>
+            <div class="mono-sub">MERN STACK // SOCKET.IO REAL-TIME // LEAFLET GEOSPATIAL</div>
+          </div>
+          <span class="mono-tag">Production Live</span>
+        </div>
+        <p class="mono-desc">
+          Production MERN food delivery application with real-time Socket.io delivery partner updates, 3-role authentication (Customer, Restaurant Owner, Delivery Partner), and geospatial Leaflet.js restaurant discovery for Pune.
+        </p>
+        <div class="mono-tech">
+          <span class="tech-pill">React.js</span><span class="tech-pill">Node.js</span><span class="tech-pill">MongoDB</span><span class="tech-pill">Socket.io</span><span class="tech-pill">Leaflet.js</span><span class="tech-pill">Firebase Admin</span>
+        </div>
+        <div class="mono-links">
+          <a href="https://tomato-frontend-seven.vercel.app" target="_blank" class="link-btn">tomato-frontend-seven.vercel.app ↗</a>
+          <a href="https://github.com/NotArsal/Tomato" target="_blank" class="link-btn">github.com/NotArsal/Tomato ↗</a>
+        </div>
+      </article>
+
+      <!-- 4. Physiotherapy -->
+      <article class="mono-card search-item" data-category="PROJECTS" data-keywords="physiotherapy posture exercise monitoring mediapipe bilstm computer vision typescript flask react vercel">
+        <div class="mono-top">
+          <div>
+            <h3 class="mono-title">Physiotherapy — AI Posture &amp; Exercise Monitor</h3>
+            <div class="mono-sub">MEDIAPIPE 33-KEYPOINT // BiLSTM SEQUENCE CLASSIFIER</div>
+          </div>
+          <span class="mono-tag">Computer Vision</span>
+        </div>
+        <p class="mono-desc">
+          Real-time posture correction system using MediaPipe for 33-keypoint skeletal tracking and BiLSTM for temporal exercise sequence classification with sub-100ms inference latency and automated rep counting.
+        </p>
+        <div class="mono-tech">
+          <span class="tech-pill">MediaPipe</span><span class="tech-pill">BiLSTM</span><span class="tech-pill">TensorFlow</span><span class="tech-pill">Flask</span><span class="tech-pill">React</span><span class="tech-pill">TypeScript</span>
+        </div>
+        <div class="mono-links">
+          <a href="https://physiotherapy-frotend.vercel.app" target="_blank" class="link-btn">physiotherapy-frotend.vercel.app ↗</a>
+          <a href="https://github.com/NotArsal/Physiotherapy" target="_blank" class="link-btn">github.com/NotArsal/Physiotherapy ↗</a>
+        </div>
+      </article>
+
+      <!-- 5. Solar Grievance System -->
+      <article class="mono-card search-item" data-category="PROJECTS" data-keywords="solar grievance customer management industry project react node express mongodb vercel">
+        <div class="mono-top">
+          <div>
+            <h3 class="mono-title">Solar Grievance Management System</h3>
+            <div class="mono-sub">INDUSTRY PROJECT // EXPRESS &amp; REACT ENTERPRISE PIPELINE</div>
+          </div>
+          <span class="mono-tag">Industry Project</span>
+        </div>
+        <p class="mono-desc">
+          Enterprise customer grievance management portal for solar energy installations featuring automated ticket routing, status analytics, and real-time support dashboards.
+        </p>
+        <div class="mono-tech">
+          <span class="tech-pill">JavaScript</span><span class="tech-pill">Node.js</span><span class="tech-pill">Express</span><span class="tech-pill">React</span><span class="tech-pill">MongoDB</span>
+        </div>
+        <div class="mono-links">
+          <a href="https://industryproject-frontend.vercel.app" target="_blank" class="link-btn">industryproject-frontend.vercel.app ↗</a>
+          <a href="https://github.com/NotArsal/Solar-Customer-Grievance-Management-System" target="_blank" class="link-btn">GitHub Repo ↗</a>
+        </div>
+      </article>
+
+      <!-- 6. Algorithm Simulator -->
+      <article class="mono-card search-item" data-category="PROJECTS" data-keywords="algorithm simulator shortest path dijkstra a-star bellman ford floyd warshall graph theory python openstreetmap pune">
+        <div class="mono-top">
+          <div>
+            <h3 class="mono-title">Algorithm Simulator — Shortest Path Visualizer</h3>
+            <div class="mono-sub">GRAPH THEORY // DIJKSTRA // A* // OPENSTREETMAP PUNE</div>
+          </div>
+          <span class="mono-tag">Algorithms</span>
+        </div>
+        <p class="mono-desc">
+          Interactive shortest path algorithm simulator executing Dijkstra, A*, Bellman-Ford, and Floyd-Warshall on real Pune city road network data with animated path overlays.
+        </p>
+        <div class="mono-tech">
+          <span class="tech-pill">Python</span><span class="tech-pill">OpenStreetMap</span><span class="tech-pill">Dijkstra</span><span class="tech-pill">A*</span><span class="tech-pill">Graph Algorithms</span>
+        </div>
+        <div class="mono-links">
+          <a href="https://github.com/NotArsal/algorithm-Simulator" target="_blank" class="link-btn">github.com/NotArsal/algorithm-Simulator ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== OPEN SOURCE SECTION ===== -->
+  <section id="opensource">
+    <span class="sec-tag">02 // OPEN SOURCE ECOSYSTEM</span>
+    <h2 class="sec-title">Public Contributions &amp; Tools</h2>
+
+    <div class="os-grid">
+
+      <div class="os-tile search-item" data-category="OPEN SOURCE" data-keywords="natively cluely ai assistant copilot meeting transcription stealth mode local rag byok typescript">
+        <div>
+          <div class="os-title">natively-cluely-ai-assistant</div>
+          <p class="os-desc">Free open-source AI interview copilot &amp; meeting assistant. Real-time transcription, stealth mode, local RAG, BYOK.</p>
+        </div>
+        <a href="https://github.com/NotArsal/natively-cluely-ai-assistant" target="_blank" class="link-btn">natively.software ↗</a>
+      </div>
+
+      <div class="os-tile search-item" data-category="OPEN SOURCE" data-keywords="antigravity claude proxy gemini openclaw clawdbot proxy ai">
+        <div>
+          <div class="os-title">antigravity-claude-proxy</div>
+          <p class="os-desc">Proxy exposing Antigravity-provided Claude &amp; Gemini models for use in Claude Code and OpenClaw (Clawdbot).</p>
+        </div>
+        <a href="https://github.com/NotArsal/antigravity-claude-proxy" target="_blank" class="link-btn">GitHub Repo ↗</a>
+      </div>
+
+      <div class="os-tile search-item" data-category="OPEN SOURCE" data-keywords="gstack garry tan claude code tools devops qa eng manager">
+        <div>
+          <div class="os-title">gstack</div>
+          <p class="os-desc">Garry Tan's Claude Code setup integrating 23 opinionated tools serving as CEO, Designer, Eng Manager, and QA.</p>
+        </div>
+        <a href="https://github.com/NotArsal/gstack" target="_blank" class="link-btn">GitHub Repo ↗</a>
+      </div>
+
+      <div class="os-tile search-item" data-category="OPEN SOURCE" data-keywords="hiring agent ai resume score evaluate parser python">
+        <div>
+          <div class="os-title">hiring-agent</div>
+          <p class="os-desc">Autonomous AI agent designed to evaluate, parse, and score technical resumes with structured metrics.</p>
+        </div>
+        <a href="https://github.com/NotArsal/hiring-agent" target="_blank" class="link-btn">GitHub Repo ↗</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== TECHNICAL MATRIX ===== -->
+  <section id="matrix" class="search-item" data-category="TECH STACK" data-keywords="frontend backend machine learning databases python react node express tensorflow mongodb postgresql redis docker vercel">
+    <span class="sec-tag">03 // TECHNICAL TOOLCHAIN</span>
+    <h2 class="sec-title">Engineering Stack Matrix</h2>
+    <div class="matrix-grid">
+      <div class="matrix-box">
+        <div class="matrix-title">Frontend</div>
+        <div class="matrix-tags">
+          <span class="tech-pill">React.js</span><span class="tech-pill">TypeScript</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Vite</span><span class="tech-pill">Leaflet.js</span><span class="tech-pill">Chart.js</span>
+        </div>
+      </div>
+      <div class="matrix-box">
+        <div class="matrix-title">Backend</div>
+        <div class="matrix-tags">
+          <span class="tech-pill">Node.js</span><span class="tech-pill">Express.js</span><span class="tech-pill">Flask</span><span class="tech-pill">FastAPI</span><span class="tech-pill">Socket.io</span><span class="tech-pill">JWT</span>
+        </div>
+      </div>
+      <div class="matrix-box">
+        <div class="matrix-title">AI &amp; Machine Learning</div>
+        <div class="matrix-tags">
+          <span class="tech-pill">Python</span><span class="tech-pill">TensorFlow</span><span class="tech-pill">Scikit-Learn</span><span class="tech-pill">XGBoost</span><span class="tech-pill">MediaPipe</span><span class="tech-pill">BiLSTM</span><span class="tech-pill">SHAP</span>
+        </div>
+      </div>
+      <div class="matrix-box">
+        <div class="matrix-title">Databases &amp; Infrastructure</div>
+        <div class="matrix-tags">
+          <span class="tech-pill">MongoDB</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">MySQL</span><span class="tech-pill">Redis</span><span class="tech-pill">Docker</span><span class="tech-pill">Vercel</span><span class="tech-pill">Render</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GETDESIGN.MD DESIGN SPECIFICATION TOKENS ===== -->
+  <section id="designspec">
+    <span class="sec-tag">04 // GETDESIGN.MD SPECIFICATION</span>
+    <h2 class="sec-title">System Architecture Tokens</h2>
+    <div class="design-spec-box">
+      <div style="font-family:'Geist Mono',monospace;font-size:12.5px;color:var(--muted);margin-bottom:16px">
+        [DESIGN.md Token Standard] - Structured AI Agent Reference Architecture
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;font-family:'Geist Mono',monospace;font-size:12px">
+        <div><span style="color:var(--dim)">BACKGROUND:</span> <span style="color:#00FF9D">#000000</span></div>
+        <div><span style="color:var(--dim)">CARD BACKDROP:</span> <span style="color:#00FF9D">#0A0A0A</span></div>
+        <div><span style="color:var(--dim)">ACCENT VERCEL:</span> <span style="color:#0070F3">#0070F3</span></div>
+        <div><span style="color:var(--dim)">TYPOGRAPHY:</span> <span>Geist Mono + Inter</span></div>
+        <div><span style="color:var(--dim)">GRID OVERLAY:</span> <span>40px Radial Mask</span></div>
+        <div><span style="color:var(--dim)">HOTKEY LISTENER:</span> <span>Cmd+K &amp; Slash (/)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACADEMIC RESEARCH ===== -->
+  <section id="research" class="search-item" data-category="RESEARCH" data-keywords="research publication paper icia-met'26 plant disease detection deep learning machine learning cnn computer vision edge devices">
+    <span class="sec-tag">05 // ACADEMIC RESEARCH PUBLICATION</span>
+    <div class="research-box">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--dim);margin-bottom:6px">ICIA-MET'26 CONFERENCE PAPER</div>
+      <h3 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;margin-bottom:8px">A Comparative Study of Deep Learning and Classical Machine Learning for Image-Based Plant Disease Detection</h3>
+      <div style="font-family:'Geist Mono',monospace;font-size:12.5px;color:var(--muted);margin-bottom:16px">Published at International Conference on Innovative Approaches in Multidisciplinary Engineering and Technology</div>
+      <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:20px">
+        Co-authored research benchmarking classical computer vision pipelines against Convolutional Neural Network architectures for agricultural disease identification. Analyzed accuracy, inference latency, and computational efficiency across resource-constrained edge devices.
+      </p>
+      <a href="https://github.com/NotArsal/Plant-Disease-Detection" target="_blank" class="link-btn">github.com/NotArsal/Plant-Disease-Detection ↗</a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="contact-inner">
+      <span class="sec-tag">06 // CONTACT</span>
+      <h2 class="sec-title" style="margin-bottom:16px">Let's Build Something Impactful</h2>
+      <p style="color:var(--muted);font-size:16px;margin-bottom:32px">
+        Available for AI/ML engineering internships, research collaborations, startup technical roles, and open-source projects.
+      </p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="mailto:shaikhhunainofficial@gmail.com" class="btn-main">
+          Email: shaikhhunainofficial@gmail.com ↵
+        </a>
+        <a href="tel:+919156699791" class="btn-ghost">
+          Call: +91 9156699791
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div>© 2026 Shaikh Hunain · Built with 21st.dev, Aceternity UI &amp; getdesign.md Design System Architecture</div>
+    <div style="margin-top:6px">Pune, Maharashtra, India</div>
+  </div>
+</footer>
+
+<!-- ===== COMMAND PALETTE MODAL (CMD+K) ===== -->
+<div id="cmd-modal" onclick="closeCmdModal()">
+  <div class="cmd-box" onclick="event.stopPropagation()">
+    <div class="cmd-header">
+      <span style="color:var(--muted)">🔍</span>
+      <input type="text" id="cmd-search" class="cmd-input" placeholder="Type a command or jump to section (e.g. cases, stack, email)..." oninput="handleCmdSearch()" />
+    </div>
+    <div class="cmd-items" id="cmd-items-list">
+      <div class="cmd-item" onclick="scrollToSec('search');closeCmdModal()"><span>00 // Interactive Live Search Engine</span> <span>Search</span></div>
+      <div class="cmd-item" onclick="scrollToSec('cases');closeCmdModal()"><span>01 // Featured Case Studies & Repos</span> <span>Jump</span></div>
+      <div class="cmd-item" onclick="scrollToSec('opensource');closeCmdModal()"><span>02 // Open Source Ecosystem</span> <span>Jump</span></div>
+      <div class="cmd-item" onclick="scrollToSec('matrix');closeCmdModal()"><span>03 // Technical Stack Matrix</span> <span>Jump</span></div>
+      <div class="cmd-item" onclick="scrollToSec('designspec');closeCmdModal()"><span>04 // DESIGN.md Token Spec</span> <span>Tokens</span></div>
+      <div class="cmd-item" onclick="scrollToSec('research');closeCmdModal()"><span>05 // Published ICIA-MET'26 Paper</span> <span>Jump</span></div>
+      <div class="cmd-item" onclick="window.open('https://github.com/NotArsal','_blank');closeCmdModal()"><span>GitHub Profile (NotArsal)</span> <span>External</span></div>
+      <div class="cmd-item" onclick="window.open('mailto:shaikhhunainofficial@gmail.com');closeCmdModal()"><span>Send Direct Email</span> <span>Mail</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ACETERNITY CURSOR SPOTLIGHT TRACKER
+document.addEventListener('mousemove', (e) => {
+  const glow = document.getElementById('spotlight-glow');
+  if (glow) {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  }
+});
+
+let currentCategory = 'ALL';
+
+function setCategoryFilter(cat, btnEl) {
+  currentCategory = cat;
+  document.querySelectorAll('.search-tab').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  handleSearch();
+}
+
+function handleSearch() {
+  const query = (document.getElementById('live-search-input').value || '').toLowerCase().trim();
+  const items = document.querySelectorAll('.search-item');
+  let visibleCount = 0;
+
+  items.forEach(item => {
+    const cat = item.getAttribute('data-category');
+    const keywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+    const matchesCategory = (currentCategory === 'ALL' || cat === currentCategory);
+    const matchesQuery = query === '' || keywords.includes(query) || item.innerText.toLowerCase().includes(query);
+
+    if (matchesCategory && matchesQuery) {
+      item.style.display = '';
+      visibleCount++;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  const label = document.getElementById('search-count-label');
+  if (label) {
+    if (query !== '' || currentCategory !== 'ALL') {
+      label.innerText = `FOUND ${visibleCount} MATCHES FOR "${query.toUpperCase() || currentCategory}"`;
+    } else {
+      label.innerText = 'SHOWING ALL IMPLEMENTATIONS & REPOSITORIES';
+    }
+  }
+}
+
+function resetSearch() {
+  document.getElementById('live-search-input').value = '';
+  setCategoryFilter('ALL', document.querySelectorAll('.search-tab')[0]);
+}
+
+function copyCode(id) {
+  const codeEl = document.getElementById(id);
+  if (!codeEl) return;
+  navigator.clipboard.writeText(codeEl.innerText).then(() => {
+    showToast('COPIED JSON TO CLIPBOARD!');
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  const tMsg = document.getElementById('toast-msg');
+  if (t && tMsg) {
+    tMsg.innerText = msg;
+    t.classList.add('show');
+    setTimeout(() => { t.classList.remove('show'); }, 2000);
+  }
+}
+
+function scrollToSec(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleDrawer(id) {
+  const d = document.getElementById(id);
+  if (d) d.classList.toggle('open');
+}
+
+function openCmdModal() {
+  document.getElementById('cmd-modal').classList.add('open');
+  document.getElementById('cmd-search').focus();
+}
+function closeCmdModal() {
+  document.getElementById('cmd-modal').classList.remove('open');
+}
+
+function handleCmdSearch() {
+  const q = document.getElementById('cmd-search').value.toLowerCase().trim();
+  const items = document.querySelectorAll('#cmd-items-list .cmd-item');
+  items.forEach(item => {
+    if (q === '' || item.innerText.toLowerCase().includes(q)) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+    e.preventDefault(); openCmdModal();
+  }
+  if (e.key === '/') {
+    if (document.activeElement.tagName !== 'INPUT') {
+      e.preventDefault();
+      document.getElementById('live-search-input').focus();
+      document.getElementById('search').scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  if (e.key === 'Escape') closeCmdModal();
+});
+</script>
+</body>
+</html>
