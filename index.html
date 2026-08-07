@@ -346,11 +346,33 @@
   }
   .cmd-item:hover { background: rgba(255,255,255,0.06); color: var(--text); }
 
-  /* ---- RESPONSIVE ---- */
+  /* ---- RESPONSIVE MOBILE STYLING ---- */
+  .mobile-nav-btn { display: none; }
+
   @media (max-width: 768px) {
     .nav-links { display: none; }
-    .hero-title { font-size: 38px; }
-    .mono-card { padding: 24px; }
+    .mobile-nav-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .container { padding: 0 16px; }
+    #hero { padding: 110px 0 40px; }
+    .hero-title { font-size: clamp(32px, 8vw, 48px); letter-spacing: -1px; }
+    .hero-bio { font-size: 15.5px; }
+    .hero-actions { flex-direction: column; width: 100%; }
+    .hero-actions a { width: 100%; justify-content: center; text-align: center; }
+    .mono-card { padding: 20px; }
+    .mono-title { font-size: 19px; }
+    .search-container { padding: 6px; }
+    .search-input { font-size: 13.5px; }
+    .search-shortcut { display: none; }
+    #cmd-modal { padding-top: 60px; padding-left: 12px; padding-right: 12px; }
+    .cmd-box { border-radius: 10px; max-height: 80vh; }
+  }
+
+  @media (max-width: 480px) {
+    .sec-title { font-size: 24px; }
+    .os-grid, .matrix-grid { grid-template-columns: 1fr; }
+    .research-box { padding: 20px; }
   }
 </style>
 </head>
@@ -375,6 +397,10 @@
       <span class="nav-link" onclick="scrollToSec('research')">Research</span>
       <span class="nav-link" onclick="scrollToSec('contact')">Contact</span>
       <a href="Shaikh_Hunain_Resume.pdf" download="Shaikh_Hunain_Resume.pdf" class="nav-link" style="color:var(--text);font-weight:600">Resume ↓</a>
+      <button class="nav-btn" onclick="openCmdModal()">⌘K</button>
+    </div>
+    <div class="mobile-nav-btn">
+      <a href="Shaikh_Hunain_Resume.pdf" download="Shaikh_Hunain_Resume.pdf" class="nav-link" style="color:var(--text);font-weight:600;font-size:12px">Resume ↓</a>
       <button class="nav-btn" onclick="openCmdModal()">⌘K</button>
     </div>
   </div>
