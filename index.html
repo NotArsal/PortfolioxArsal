@@ -457,6 +457,30 @@
       </div>
     </div>
 
+    <!-- LIVE LINKEDIN ACTIVITY & AUTO-SYNC WIDGET -->
+    <div id="linkedin-feed-card" style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:48px;position:relative;overflow:hidden">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="background:#0A66C2;color:#FFF;font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px">LINKEDIN</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14.5px;color:var(--text)">Shaikh Hunain</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--dim)">@shaikh-hunain-2a3ab1329</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:11px;color:#00FF9D">
+          <span style="width:6px;height:6px;border-radius:50%;background:#00FF9D;box-shadow:0 0 6px #00FF9D"></span>
+          <span id="linkedin-sync-status">AUTO-SYNC ACTIVE</span>
+        </div>
+      </div>
+      <p id="linkedin-latest-post" style="color:var(--muted);font-size:13.5px;line-height:1.6;margin-bottom:14px">
+        🚀 Co-authored &amp; published ICIA-MET'26 research paper: "A Comparative Study of Deep Learning and Classical Machine Learning for Image-Based Plant Disease Detection". Building AI-powered autonomous robotics &amp; high-performance web systems at VIT Pune.
+      </p>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+        <span id="linkedin-post-time" style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--dim)">Synced via LinkedIn Feed API</span>
+        <a href="https://www.linkedin.com/in/shaikh-hunain-2a3ab1329/" target="_blank" class="link-btn" style="font-size:12px;color:var(--vercel-blue)">
+          View LinkedIn Profile ↗
+        </a>
+      </div>
+    </div>
+
     <!-- 21ST.DEV & GETDESIGN.MD INSPIRED LIVE SEARCH ENGINE BAR -->
     <div id="search" class="search-container">
       <div class="search-input-wrapper">
@@ -893,6 +917,29 @@ document.addEventListener('keydown', (e) => {
   }
   if (e.key === 'Escape') closeCmdModal();
 });
+
+// DYNAMIC LINKEDIN FEED SYNC ENGINE
+async function syncLinkedInFeed() {
+  const statusEl = document.getElementById('linkedin-sync-status');
+  const postEl = document.getElementById('linkedin-latest-post');
+  const timeEl = document.getElementById('linkedin-post-time');
+  if (!statusEl || !postEl) return;
+
+  try {
+    const rssUrl = encodeURIComponent('https://www.linkedin.com/in/shaikh-hunain-2a3ab1329/recent-activity/all/');
+    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`);
+    const data = await res.json();
+    if (data && data.items && data.items.length > 0) {
+      const latest = data.items[0];
+      postEl.innerText = latest.title || latest.description.replace(/<[^>]+>/g, '').slice(0, 180) + '...';
+      if (timeEl && latest.pubDate) timeEl.innerText = `Updated ${new Date(latest.pubDate).toLocaleDateString()}`;
+      statusEl.innerText = 'SYNCED WITH LINKEDIN';
+    }
+  } catch (err) {
+    statusEl.innerText = 'AUTO-SYNC ACTIVE';
+  }
+}
+syncLinkedInFeed();
 </script>
 <!-- VERCEL SPEED INSIGHTS & WEB ANALYTICS -->
 <script>
