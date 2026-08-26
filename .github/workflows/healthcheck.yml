@@ -1,0 +1,23 @@
+name: Site Health Check
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify Live Vercel Deployment HTTP 200 OK
+        run: |
+          STATUS=$(curl -o /dev/null -s -w "%{http_code}" https://portfoliox-arsal.vercel.app/)
+          echo "Live HTTP Status Code: $STATUS"
+          if [ "$STATUS" -ne 200 ]; then
+            echo "::error title=Deployment Health Failure::Live site portfoliox-arsal.vercel.app returned HTTP $STATUS instead of 200 OK!"
+            exit 1
+          fi
+          echo "✓ Live website is online and returning 200 OK."
