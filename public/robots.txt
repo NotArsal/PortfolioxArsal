@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://website-dusky-ten-36.vercel.app/sitemap.xml
