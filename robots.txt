@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfoliox-arsal.vercel.app/sitemap.xml
+Sitemap: https://www.xarsal.xyz/sitemap.xml

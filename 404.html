@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 — Page Not Found | Shaikh Hunain</title>
+<meta name="description" content="The requested page could not be found on Shaikh Hunain's AI & Systems Engineering portfolio." />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://www.xarsal.xyz/404.html" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="404 — Page Not Found | Shaikh Hunain" />
+<meta property="og:description" content="The requested page could not be found on Shaikh Hunain's portfolio." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.xarsal.xyz/404.html" />
+<meta property="og:image" content="https://www.xarsal.xyz/og-image.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700;800&amp;display=swap" rel="stylesheet" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #000000;
+    --card-bg: #0A0A0A;
+    --border: #222222;
+    --border-hover: #444444;
+    --text: #FFFFFF;
+    --muted: #A1A1AA;
+    --dim: #52525B;
+    --vercel-blue: #0070F3;
+    --accent-green: #00FF9D;
+  }
+  body {
+    background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif;
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between;
+    overflow-x: hidden; position: relative;
+  }
+  .grid-bg {
+    position: fixed; inset: 0;
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    pointer-events: none; z-index: 0;
+  }
+  #spotlight-glow {
+    position: fixed; width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+    pointer-events: none; z-index: 1; transform: translate(-50%, -50%); transition: left 0.1s ease, top 0.1s ease;
+  }
+  header {
+    position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px);
+    background: rgba(0,0,0,0.8); border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: -0.5px; cursor: pointer; }
+  .nav-logo span { color: var(--muted); font-weight: 400; }
+  .nav-link { color: var(--muted); font-family: 'Geist Mono', monospace; font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .nav-link:hover { color: var(--text); }
+  .btn-main {
+    background: var(--text); color: #000; font-family: 'Geist Mono', monospace; font-size: 13px; font-weight: 600;
+    padding: 10px 20px; border-radius: 6px; border: none; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s;
+  }
+  .btn-main:hover { opacity: 0.9; }
+  .btn-ghost {
+    background: transparent; color: var(--text); border: 1px solid var(--border);
+    font-family: 'Geist Mono', monospace; font-size: 13px; padding: 10px 20px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.05); }
+
+  .error-container {
+    max-width: 700px; margin: 140px auto 80px; padding: 0 24px; text-align: center; position: relative; z-index: 10;
+  }
+  .status-code {
+    font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--accent-green);
+    background: rgba(0,255,157,0.1); border: 1px solid rgba(0,255,157,0.25);
+    padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 24px;
+  }
+  .error-title {
+    font-family: 'Space Grotesk', sans-serif; font-size: clamp(36px, 6vw, 64px); font-weight: 800;
+    letter-spacing: -2px; margin-bottom: 16px; line-height: 1.1;
+  }
+  .error-desc {
+    color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 36px;
+  }
+  footer {
+    border-top: 1px solid var(--border); padding: 32px 0; text-align: center;
+    font-family: 'Geist Mono', monospace; font-size: 12.5px; color: var(--dim); position: relative; z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div id="spotlight-glow"></div>
+<div class="grid-bg"></div>
+
+<header>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">HUNAIN<span> / ARSAL</span></a>
+    <a href="/" class="nav-link">Return to Portfolio ↵</a>
+  </div>
+</header>
+
+<main class="error-container">
+  <span class="status-code">404 // ERROR_ENDPOINT_NOT_FOUND</span>
+  <h1 class="error-title">The page you're looking for doesn't exist.</h1>
+  <p class="error-desc">
+    The URL route may have moved, been renamed, or never existed. Check the link or return to the main engineering portfolio.
+  </p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="/" class="btn-main">Return to Portfolio ↵</a>
+    <a href="/Shaikh_Hunain_Resume.pdf" download class="btn-ghost">Download Resume (PDF) ↓</a>
+  </div>
+</main>
+
+<footer>
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px">
+    © 2026 Shaikh Hunain · AI &amp; Systems Engineer · <a href="https://www.xarsal.xyz/" style="color:var(--dim);text-decoration:none">www.xarsal.xyz</a>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('mousemove', (e) => {
+  const glow = document.getElementById('spotlight-glow');
+  if (glow) {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  }
+});
+</script>
+</body>
+</html>

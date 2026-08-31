@@ -1,0 +1,56 @@
+# Shaikh Hunain — AI & Systems Engineer
+
+> Official AI Agent & LLM Context Specification File (`/llms.txt`)
+> Primary Domain: https://www.xarsal.xyz/
+> Author: Shaikh Hunain (GitHub: @NotArsal)
+
+## Overview
+Shaikh Hunain is an AI & Systems Engineer pursuing his B.Tech in Computer Science & Artificial Intelligence at Vishwakarma Institute of Technology (VIT), Pune (2024–Present). He specializes in machine learning pipelines, explainable AI, computer vision, autonomous robotics, and high-performance web systems.
+
+## Primary Links
+- Website: https://www.xarsal.xyz/
+- GitHub: https://github.com/NotArsal
+- LinkedIn: https://www.linkedin.com/in/shaikh-hunain-2a3ab1329/
+- ResearchGate: https://www.researchgate.net/publication/404931537_A_Comparative_Study_of_Deep_Learning_and_Classical_Machine_Learning_for_Image-Based_Plant_Disease_Detection
+- Resume (PDF): https://www.xarsal.xyz/Shaikh_Hunain_Resume.pdf
+- Industry Certification (PDF): https://www.xarsal.xyz/Nature_Tek_Solar_Certificate.pdf
+
+## Academic Research Publication
+- Title: "A Comparative Study of Deep Learning and Classical Machine Learning for Image-Based Plant Disease Detection"
+- Conference: International Conference on Innovative Approaches in Multidisciplinary Engineering and Technology (ICIA-MET'26)
+- Repository: https://github.com/NotArsal/Plant-Disease-Detection
+
+## Key Projects & Engineering Systems
+1. **SARAS — Smart Autonomous Robotic AI System**:
+   - Autonomous robotics system integrating voice interaction, computer vision, and navigation using Raspberry Pi, ROS, and multimodal AI perception.
+   - Repository: https://github.com/NotArsal/SARAS
+
+2. **FormBhar — AI Google Forms Auto-Filler**:
+   - Production Chrome Extension (Manifest V3) with Express backend, Supabase PostgreSQL, and multi-model AI engine (OpenAI GPT-4o-mini, Gemini 1.5 Pro, Claude 3) for multi-page automated form reasoning.
+   - Repository: https://github.com/NotArsal/FormBhar
+
+3. **Tomato — Full Stack Food Delivery Platform**:
+   - MERN application with real-time Socket.io delivery partner tracking, 3-role authentication, and Leaflet.js geospatial restaurant discovery for Pune.
+   - Repository: https://github.com/NotArsal/Tomato
+   - Live URL: https://tomato-frontend-seven.vercel.app
+
+4. **PhysioTracker — AI Posture & Rep Counter**:
+   - Real-time posture correction system using MediaPipe 33-keypoint tracking and BiLSTM exercise sequence classification delivering sub-100ms inference latency.
+   - Repository: https://github.com/NotArsal/Physiotherapy
+   - Live URL: https://physiotherapy-frotend.vercel.app
+
+5. **Solar Grievance Management System**:
+   - Industry-sponsored platform developed for Nature Tek Solar Pvt. Ltd. (under Prof. Archana Burujwale) for complaint registration, ticket tracking, and resolution handling.
+   - Repository: https://github.com/NotArsal/Solar-Customer-Grievance-Management-System
+   - Live URL: https://industryproject-frontend.vercel.app
+
+6. **Shortest Path Algorithm Simulator**:
+   - Interactive road network visualizer executing Dijkstra, A*, Bellman-Ford, and Floyd-Warshall on real Pune city OpenStreetMap data.
+   - Repository: https://github.com/NotArsal/algorithm-Simulator
+
+## Technical Stack
+- Languages: Python, JavaScript (ES6+), TypeScript, C++, HTML5, CSS3
+- AI / ML: PyTorch, TensorFlow, Keras, scikit-learn, XGBoost, MediaPipe, BiLSTM, SHAP, OpenCV
+- Backend: Node.js, Express.js, Flask, FastAPI, REST APIs, Socket.io, JWT
+- Databases: MongoDB, PostgreSQL, MySQL, Redis, Supabase
+- Cloud & DevOps: Docker, Vercel, Render, Git, GitHub, Linux, VS Code

@@ -3,33 +3,49 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shaikh Hunain — AI & Systems Engineer</title>
-<meta name="description" content="Shaikh Hunain — AI Engineer & Full Stack Developer at VIT Pune. Building high-performance ML pipelines, autonomous robotics, and scalable web architectures." />
+<title>Shaikh Hunain — AI &amp; Systems Engineer | VIT Pune</title>
+<meta name="description" content="Shaikh Hunain is an AI &amp; Systems Engineer at VIT Pune specializing in machine learning pipelines, autonomous robotics (SARAS), explainable ML models, and high-performance web systems." />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="author" content="Shaikh Hunain" />
 <meta name="keywords" content="Shaikh Hunain, NotArsal, AI Engineer, Machine Learning Engineer, Full Stack Developer, VIT Pune, SARAS Robotics, NutriAI, FormBhar, Computer Vision, MediaPipe, XGBoost, PyTorch, React, Node.js" />
+<link rel="canonical" href="https://www.xarsal.xyz/" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
 
 <!-- Open Graph / Social Media -->
-<meta property="og:title" content="Shaikh Hunain — AI &amp; Systems Engineer" />
-<meta property="og:description" content="AI Engineer &amp; Full Stack Developer at VIT Pune. Building high-performance ML pipelines, autonomous robotics, and scalable web architectures." />
+<meta property="og:title" content="Shaikh Hunain — AI &amp; Systems Engineer | VIT Pune" />
+<meta property="og:description" content="Shaikh Hunain is an AI &amp; Systems Engineer at VIT Pune building high-performance ML pipelines, autonomous robotics, and scalable web architectures." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://github.com/NotArsal/PortfolioxArsal" />
+<meta property="og:url" content="https://www.xarsal.xyz/" />
+<meta property="og:image" content="https://www.xarsal.xyz/og-image.svg" />
 <meta property="og:site_name" content="Shaikh Hunain Portfolio" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Shaikh Hunain — AI &amp; Systems Engineer" />
+<meta name="twitter:title" content="Shaikh Hunain — AI &amp; Systems Engineer | VIT Pune" />
 <meta name="twitter:description" content="AI &amp; Systems Engineer building ML pipelines, autonomous robotics, and scalable backends." />
+<meta name="twitter:image" content="https://www.xarsal.xyz/og-image.svg" />
 
-<!-- JSON-LD Structured Data (Person & ScholarlyArticle Schema) -->
+<!-- JSON-LD Structured Data (WebSite, Person, EducationalOrganization, ScholarlyArticle & BreadcrumbList Schema) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.xarsal.xyz/#website",
+      "url": "https://www.xarsal.xyz/",
+      "name": "Shaikh Hunain Portfolio",
+      "description": "Shaikh Hunain — AI & Systems Engineer Portfolio",
+      "publisher": {
+        "@id": "https://www.xarsal.xyz/#person"
+      }
+    },
+    {
       "@type": "Person",
-      "@id": "https://github.com/NotArsal#person",
+      "@id": "https://www.xarsal.xyz/#person",
       "name": "Shaikh Hunain",
       "alternateName": ["NotArsal", "Hunain Shaikh"],
       "jobTitle": "AI & Systems Engineer",
+      "url": "https://www.xarsal.xyz/",
       "worksFor": {
         "@type": "EducationalOrganization",
         "name": "Vishwakarma Institute of Technology (VIT), Pune"
@@ -49,13 +65,30 @@
       "@type": "ScholarlyArticle",
       "headline": "A Comparative Study of Deep Learning and Classical Machine Learning for Image-Based Plant Disease Detection",
       "author": {
-        "@id": "https://github.com/NotArsal#person"
+        "@id": "https://www.xarsal.xyz/#person"
       },
       "publisher": {
         "@type": "Organization",
         "name": "International Conference on Innovative Approaches in Multidisciplinary Engineering and Technology (ICIA-MET'26)"
       },
       "url": "https://www.researchgate.net/publication/404931537_A_Comparative_Study_of_Deep_Learning_and_Classical_Machine_Learning_for_Image-Based_Plant_Disease_Detection"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.xarsal.xyz/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfolio",
+          "item": "https://www.xarsal.xyz/#cases"
+        }
+      ]
     }
   ]
 }
@@ -410,6 +443,15 @@
 
   <!-- ===== HERO SECTION ===== -->
   <section id="hero">
+    <!-- SEMANTIC BREADCRUMB NAVIGATION -->
+    <nav aria-label="Breadcrumb" style="margin-bottom:16px">
+      <ol style="display:flex;align-items:center;gap:8px;list-style:none;font-family:'Geist Mono',monospace;font-size:12px;color:var(--dim);padding:0">
+        <li><a href="https://www.xarsal.xyz/" style="color:var(--muted);text-decoration:none">Home</a></li>
+        <li>/</li>
+        <li style="color:var(--text);font-weight:500">Portfolio</li>
+      </ol>
+    </nav>
+
     <div class="status-pill">
       <span class="status-dot"></span>
       <span>AVAILABLE FOR ROLES // FULL-STACK &amp; AI</span>
@@ -485,7 +527,7 @@
     <div id="search" class="search-container">
       <div class="search-input-wrapper">
         <span class="search-icon">🔍</span>
-        <input type="text" id="live-search-input" class="search-input" placeholder="Search projects, technologies, repos, paper (e.g. XGBoost, Robotics, Chrome, MERN)..." oninput="handleSearch()" />
+        <input type="text" id="live-search-input" class="search-input" aria-label="Search projects, technologies, repos, and publications" placeholder="Search projects, technologies, repos, paper (e.g. XGBoost, Robotics, Chrome, MERN)..." oninput="handleSearch()" />
         <span class="search-shortcut">Press / to focus</span>
       </div>
       <div class="search-tabs">
@@ -789,7 +831,7 @@
   <div class="cmd-box" onclick="event.stopPropagation()">
     <div class="cmd-header">
       <span style="color:var(--muted)">🔍</span>
-      <input type="text" id="cmd-search" class="cmd-input" placeholder="Type a command or jump to section (e.g. cases, stack, email)..." oninput="handleCmdSearch()" />
+      <input type="text" id="cmd-search" class="cmd-input" aria-label="Type a command or search query" placeholder="Type a command or jump to section (e.g. cases, stack, email)..." oninput="handleCmdSearch()" />
     </div>
     <div class="cmd-items" id="cmd-items-list">
       <div class="cmd-item" onclick="scrollToSec('search');closeCmdModal()"><span>00 // Interactive Live Search Engine</span> <span>Search</span></div>
